@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>adidas Singapore</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular-route.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script>
+        var mainApp = angular.module("mainApp", ['ngRoute']);
+        mainApp.config(['$routeProvider', function($routeProvider) {
+            $routeProvider.
+
+            when('/bliss', {
+                template: '<img src=images/image1.jpg></img>'
+
+            }).
+
+            when('/anotherslide1', {
+                template: '<img src=images/image2.jpg></img>'
+            }).
+
+            when('/anotherslide2', {
+                template: '<img src=images/image3.jpg></img>'
+            }).
+
+            when('/anotherslide3', {
+                template: '<img src=images/image4.jpg></img>'
+            }).
+            otherwise({
+
+                template: '<img src=images/image1.jpg></img>'
+            });
+
+        }]);
+
+        function myFunction() {
+
+
+            document.getElementById("myDropdown").classList.toggle("show");
+
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function(event) {
+
+            if ((!event.target.matches('#but'))) {
+
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                console.log(dropdowns);
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+
+        $(document).ready(function() {
+            $("nav a").click(function() {
+
+                $("nav a").removeClass("active");
+                $(this).addClass("active");
+            });
+
+            $("#myCarousel").carousel({
+                interval: 1000,
+                pause: false
+            });
+        });
+
+        function resize() {
+            var height = window.innerHeight;
+            var width = window.innerWidth;
+            if (width < "647") {
+                document.getElementById("page1").text = "Slide 1";
+                document.getElementById("page2").text = "Slide 2";
+                document.getElementById("page3").text = "Slide 3";
+                document.getElementById("page4").text = "Slide 4";
+
+
+            } else {
+                document.getElementById("page1").text = "The bliss difference";
+                document.getElementById("page2").text = "Another slide";
+                document.getElementById("page3").text = "Another slide";
+                document.getElementById("page4").text = "Another slide";
+
+
+            }
+        }
+
+        window.onresize = resize;
+    </script>
+
+</head>
+
+<body ng-app="mainApp">
+    <div class="header-container">
+        <div class="head1">
+            <div style="width:58%;margin:0 auto;">
+                <ul class="login-links">
+                    <li class="order-traker-link"><a href="" title="Order Tracker">Order Tracker</a></li>
+                    <li class="header-newsletter"><a class="newsletter-link">Newsletter Signup</a></li>
+                    <li class="login"><a class="login-link" href="">Login</a><i class="fas fa-user"></i></li>
+                </ul>
+            </div>
+        </div>
+        <div class="head2">
+            <div style="width:61%;margin:0 auto;">
+                <span id="logo"><img src="images\adidas_logo.jpg"></span>
+                <a href="#" class="selectedC"><img src="images\adi_sg.gif"></a>
+                <ul id="hea">
+
+                    <li class="heading"><a href="#">men</a>&nbsp&nbsp&nbsp&nbsp</li>
+                    <li class="heading"><a href="#">women</a></li>&nbsp&nbsp&nbsp&nbsp
+                    <li class="heading"><a href="#">young adults</a></li>&nbsp&nbsp&nbsp&nbsp
+                    <li class="heading"><a href="#">sports brands</a></li>&nbsp&nbsp&nbsp&nbsp
+                    <li class="heading"><a href="#">ultraboost uncaged</a></li>&nbsp&nbsp&nbsp&nbsp
+                    <li class="awesome"><input type="text" style="border-width:0 0 3px 0;padding: 5px;" placeholder="search"></input>
+                    </li>
+                    <li class="heading"><a href="#"><i class="fas fa-heart"></i></a></li>&nbsp&nbsp&nbsp&nbsp
+                    <li class="awesome"><i class="fas fa-shopping-bag"></i></li>
+                </ul>
+
+
+                <div class="dropdown">
+                    <ul>
+                        <li><i class="fa fa-search" style="color:#00416a;"></i><input id="serachh" type="text" style="border-width:0 0 1px 0;width:22%;border-bottom-color: #00416a;"></li>
+                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                        <li><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+                    </ul>
+                    <button id="but" onclick="myFunction()" class="fa fa-bars"></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">men</a>
+                        <a href="#">women</a>
+                        <a href="#">young adults</a>
+                        <a href="#">sports brands</a>
+                        <a href="#">ultraboost uncaged</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="head3">
+            <div style="width:70%;margin:0 auto;">
+                <ul>
+                    <li class="freedelivery"><img src="https://d38yb3rrelxb9y.cloudfront.net/sg/skin/frontend/enterprise/adidas/images/adidas_USP_delivery.png"><a href="http://shop.adidas.com.sg/delivery-terms/" title="Free shipping on orders above 100 sgd">free shipping on orders above 100 sgd</a></li>
+                    <li class="customerservicon"><img src="https://d38yb3rrelxb9y.cloudfront.net/sg/skin/frontend/enterprise/adidas/images/adidas_USP_call.png"><a href="http://shop.adidas.com.sg/contact_us_online/" title="Call us +65 6845 6845 or click to send us a message">monday to friday 9:00 am to 6:00 pm</a></li>
+                    <li class="fastreturns"><img src="https://d38yb3rrelxb9y.cloudfront.net/sg/skin/frontend/enterprise/adidas/images/adidas_USP_returns.png"><a href="http://shop.adidas.com.sg/returning/" title="Free returns within 30 days">free returns</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="carousel-container">
+        <br>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ul>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" style="overflow:visible;" role="listbox">
+
+                <div class="item active">
+                    <img src="https://d3ag7gmpyt0wvo.cloudfront.net/banners/20180215_HardenVol2_masthead.jpg" class="hero-banner-img-style" alt="Cold Blooded">
+                </div>
+
+                <div class="item">
+                    <img src="https://d3ag7gmpyt0wvo.cloudfront.net/banners/20180301_Prophere_masthead2.jpg" class="hero-banner-img-style" alt="Prophere">
+                </div>
+
+                <div class="item">
+                    <img src="https://d3ag7gmpyt0wvo.cloudfront.net/banners/20180228_Ultraboost_masthead.jpg" class="hero-banner-img-style" alt="Ultraboost">
+                </div>
+
+                <div class="item">
+                    <img src="https://d3ag7gmpyt0wvo.cloudfront.net/banners/20180201_Coldblooded_masthead.jpg" class="hero-banner-img-style" alt="Cold Blooded">
+                </div>
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <style>
+        .active {
+            border-top: 4px #00a1c2 solid;
+        }
+    </style>
+    <div id="blissspa">
+        <div id="blissa">
+            <div class="bliss1"><img title="" alt="" src="http://d3ag7gmpyt0wvo.cloudfront.net/cms/20180201_ZNE_DFC2.jpg"><br><br>
+                <p>SHOP ZNE</p>
+            </div>
+            <div class="bliss1"><img title="" alt="" src="http://d3ag7gmpyt0wvo.cloudfront.net/cms/2018jan05_alphabounce_dfc4.jpg"><br><br>
+                <p>SHOP ALPHABOUNCE</p>
+            </div>
+        </div>
+
+        <div id="blissb">
+            <div class="bliss2"><img title="" alt="" src="http://d3ag7gmpyt0wvo.cloudfront.net/cms/160716_outlet_fc.jpg">
+                <h3>outlet</h3>
+                <p>SHOP NOW</p>
+            </div>
+            <div class="bliss2"><img title="" alt="" src="http://d3ag7gmpyt0wvo.cloudfront.net/cms/6_ft_originals.jpg">
+                <h3>originals</h3>
+                <p>SHOP NOW</p>
+            </div>
+            <div class="bliss2"><img title="" alt="" src="http://d3ag7gmpyt0wvo.cloudfront.net/cms/ft_sportsperformance.jpg">
+                <h3>sports performance</h3>
+                <p>SHOP NOW</p>
+            </div>
+            <div class="bliss2"><img title="" alt="" src="http://d3ag7gmpyt0wvo.cloudfront.net/cms/20180215_Xpressive_fc1.jpg">
+                <h3>live your style</h3>
+                <p>SHOP NOW</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer1">
+        <div class="footer1-left">
+            10% off your next purchase when you sign up
+        </div>
+        <div class="footer1-right">
+            <div class="footer-blk-btn-div">
+                <input type="text" name="email" id="newsletter_footer" title="Sign up for our newsletter" class="input-text required-entry validate-email valid" placeholder="YOUR EMAIL ADDRESS">
+            </div>
+            <div class="footer-gender-buttons">
+                <button type="submit" title="MALE" class="btn_primary">
+                    <span>SIGN UP MEN</span>
+                </button>
+                <button type="submit" title="FEMALE" class="btn_primary">
+                    <span>SIGN UP WOMEN</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-footer" style="margin-left: 18.5%; margin-bottom:15px;">
+
+
+
+        <div class="main-footer2-a">
+            <h3><span class="widget widget-category-link"><a title="Sports"><span>sports</span></a>
+                </span>
+            </h3>
+            <div><span class="widget widget-category-link"><span class="widget widget-category-link"><a title="Ace Football Boots"><span>Ace Football Boots
+        </span></a>
+                </span>
+                </span>
+                <div><span class="widget widget-category-link"><a title="X Football Boots"><span>X Football Boots
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="Messi Football Boots"><span>Messi Football Boots
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="Manchester United"><span>Manchester United
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="Real Madrid"><span>Real Madrid
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="Juventus"><span>Juventus
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="Bayern Munich"><span>Bayern Munich
+        </span></a>
+                    </span>
+                </div>
+            </div>
+            <div><span class="widget widget-category-link"><span class="widget widget-category-link"><a title="AC Milan"><span>AC Milan
+        </span></a>
+                </span>
+                </span>
+                <div><span class="widget widget-category-link"><a title="Germany"><span>Germany
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="Spain"><span>Spain
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="Russia"><span>Russia
+        </span></a>
+                    </span>
+                </div>
+                <br>
+                <div><span class="widget widget-category-link"><a title="Boost Shoes"><span>Boost Shoes
+        </span></a>
+                    </span>
+                </div>
+            </div>
+            <div><span class="widget widget-category-link"><span class="widget widget-category-link"><a title="Ultra Boost"><span>Ultra Boost
+        </span></a>
+                </span>
+                </span>
+            </div>
+            <div><span class="widget widget-category-link"><span class="widget widget-category-link"><a title="Pure Boost X"><span>Pure Boost X
+        </span></a>
+                </span>
+                </span>
+            </div>
+            <div><span class="widget widget-category-link"><span class="widget widget-category-link"><a title="Pure Boost ZG"><span>Pure Boost ZG
+        </span></a>
+                </span>
+                </span>
+            </div>
+        </div>
+
+
+        <div class="main-footer2-b">
+            <h3>collections</h3>
+
+            <div><span class="widget widget-category-link"><span class="widget widget-category-link"><a title="Stan Smith" href="http://shop.adidas.com.sg/originals/stan-smith.html"><span>Stan Smith
+        </span></a>
+                </span>
+                </span>
+                <div><span class="widget widget-category-link"><a title="Superstar"><span>Superstar
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="ZX Flux"><span>ZX Flux
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="Tubular"><span>Tubular
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="Eqt"><span>Eqt
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="NMD"><span>NMD
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="Gazelle"><span>Gazelle
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="Originals by Pharrell Williams"><span>Originals by Pharrell Williams
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="Climacool"><span>Climacool
+        </span></a>
+                    </span>
+                </div>
+                <br>
+                <div><span class="widget widget-category-link"><a title="adidas NEO"><span>adidas NEO
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="Cloudfoam"><span>Cloudfoam
+        </span></a>
+                    </span>
+                </div>
+                <br>
+                <div><span class="widget widget-category-link"><a title="Climachill"><span>Climachill
+        </span></a>
+                    </span>
+                </div>
+                <div><span class="widget widget-category-link"><a title="Z.N.E."><span>Z.N.E.
+        </span></a>
+                    </span>
+                </div>
+                <br>
+            </div>
+            <div><span class="widget widget-category-link"><span class="widget widget-category-link"><a title="Stella Sport"><span>Stella Sport
+        </span></a>
+                </span>
+                </span>
+                <div><span class="widget widget-category-link"><a title="adidas by Stella McCartney"><span>adidas by Stella McCartney
+        </span></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="main-footer2-e">
+            <h3>support</h3>
+            <div><span class="widget widget-cms-link"><a title="Contact Us"><span>Contact Us</span></a>
+                </span>
+            </div>
+            <div><span class="widget widget-cms-link"><a title="Ordering"><span>Ordering</span></a>
+                </span>
+            </div>
+            <div><span class="widget widget-cms-link"><a title="Promotion and Vouchers"><span>Promotion and Vouchers</span></a>
+                </span>
+            </div>
+            <div><span class="widget widget-cms-link"><a title="Payment"><span>Payment</span></a>
+                </span>
+            </div>
+            <div><span class="widget widget-cms-link"><a title="Delivery"><span>Delivery</span></a>
+                </span>
+            </div>
+            <div><span class="widget widget-cms-link"><a title="Returns and Refunds"><span>Returns and Refunds</span></a>
+                </span>
+            </div>
+            <div><span class="widget widget-cms-link"><a title="Click and Collect"><span>Click and Collect</span></a>
+                </span>
+            </div>
+            <div><span class="widget widget-cms-link"><a title="Click and Collect"><span>Storefinder</span></a>
+                </span>
+            </div>
+            <div><span class="widget widget-cms-link"><a title="About adidas Products"><span>About adidas Products</span></a>
+                </span>
+            </div>
+            <div><span class="widget widget-cms-link"><a title="Using our site"><span>Using our site</span></a>
+                </span>
+            </div>
+            <h3>legal</h3>
+            <div><span class="widget widget-cms-link"><a title=" Terms and conditions for website use"><span>Terms and conditions for website use</span></a>
+                </span>
+            </div>
+            <div><span class="widget widget-cms-link"><a title="Privacy Policy"><span>Privacy Policy</span></a>
+                </span>
+            </div>
+            <div><span class="widget widget-cms-link"><a title="Delivery Terms"><span>Delivery Terms</span></a>
+                </span>
+            </div>
+            <h3 style="margin-top: 15px;">payment by</h3>
+            <div style="margin-bottom: 10px;"><img alt="Mastercard, Visa, AMEX and PayPal" src="https://d3ag7gmpyt0wvo.cloudfront.net/wysiwyg/payFoot1_sg.png"></div>
+        </div>
+
+
+    </div>
+
+</body>
+
+<footer style="background:#ebebeb;">
+    <p style="color: #006ba8;">2017 adidas Singapore Pte Ltd</p>
+</footer>
+
+</html>
